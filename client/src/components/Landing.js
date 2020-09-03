@@ -10,9 +10,7 @@ export default function Landing() {
   return (
     <div>
       <Navbar />
-      <div style={{ paddingTop: "30px" }}>
-        <UploadData />
-      </div>
+
       <div style={{ paddingTop: "60px" }}>
         <Map />
       </div>
