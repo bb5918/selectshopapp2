@@ -11,10 +11,8 @@ export default function Landing() {
     <div>
       <Navbar />
 
-      <div style={{ paddingTop: "60px" }}>
-        <Map />
-      </div>
-      <Recommend />
+      <div style={{ paddingTop: "60px" }}>{/* <Map /> */}</div>
+      {/* <Recommend /> */}
     </div>
   );
 }

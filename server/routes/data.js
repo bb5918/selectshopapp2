@@ -10,9 +10,18 @@ router.post("/uploadData", (req, res) => {
     return res.status(200).json({ success: true });
   });
 });
-router.get("/getDatas", (req, res) => {
-  Data.find().exec((err, datas) => {
-    if (err) return res.status(400).send(err);
+router.post("/getDatas", (req, res) => {
+  let findArgs = {};
+
+  for (let key in req.body.filters) {
+    if (req.body.filters[key].length > 0) {
+      findArgs[key] = req.body.filters[key];
+    }
+  }
+  console.log("findargs", findArgs);
+
+  Data.find(findArgs).exec((err, datas) => {
+    if (err) return res.status(400).json({ success: false, err });
     res.status(200).json({ success: true, datas });
   });
 });

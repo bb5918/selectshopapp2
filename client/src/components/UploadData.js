@@ -8,15 +8,19 @@ const { Title } = Typography;
 
 const { TextArea } = Input;
 
-const City = [
-  { key: 1, value: "서울" },
-  { key: 2, value: "경기" },
+const Area = [
+  { key: 1, value: "동묘/종로" },
+  { key: 2, value: "합정/홍대/신촌" },
+  { key: 3, value: "이태원" },
+  { key: 4, value: "강남" },
+  { key: 5, value: "강북" },
 ];
 const Style = [
-  { key: 1, value: "hippie" },
-  { key: 2, value: "mori" },
-  { key: 3, value: "highteen" },
-  { key: 4, value: "funcky" },
+  { key: 1, value: "키치, 펑크, 고스" },
+  { key: 2, value: "플로랄, 러블리" },
+  { key: 3, value: "빈티지, 레트로" },
+  { key: 4, value: "스포츠 브랜드" },
+  { key: 5, value: "프리미엄, 매스티지 " },
 ];
 function UploadData(props) {
   const history = useHistory();
@@ -24,7 +28,7 @@ function UploadData(props) {
   const [nameValue, setNameValue] = useState("");
   const [latValue, setLatValue] = useState();
   const [lngValue, setLngValue] = useState();
-  const [cityValue, setCityValue] = useState(1);
+  const [areaValue, setAreaValue] = useState(1);
   const [styleValue, setStyleValue] = useState(1);
   const [commentValue, setCommentValue] = useState("");
   const [urlValue, setUrlValue] = useState("");
@@ -37,8 +41,8 @@ function UploadData(props) {
   const onLngChange = (event) => {
     setLngValue(event.currentTarget.value);
   };
-  const onCityChange = (event) => {
-    setCityValue(event.currentTarget.value);
+  const onAreaChange = (event) => {
+    setAreaValue(event.currentTarget.value);
   };
   const onStyleChange = (event) => {
     setStyleValue(event.currentTarget.value);
@@ -56,8 +60,8 @@ function UploadData(props) {
       name: nameValue,
       lat: latValue,
       lng: lngValue,
-      city: cityValue,
-      style: styleValue,
+      area: areaValue,
+      styles: styleValue,
       comment: commentValue,
       url: urlValue,
     };
@@ -82,8 +86,8 @@ function UploadData(props) {
         <Input onChange={onLngChange} value={lngValue} />
         <label>도시</label>
         <br />
-        <select onChange={onCityChange} value={cityValue}>
-          {City.map((item) => (
+        <select onChange={onAreaChange} value={areaValue}>
+          {Area.map((item) => (
             <option key={item.key} value={item.key}>
               {item.value}
             </option>

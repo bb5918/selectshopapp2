@@ -13,11 +13,11 @@ const dataSchema = mongoose.Schema(
     lng: {
       type: Number,
     },
-    city: {
+    area: {
       type: Number,
       default: 1,
     },
-    style: {
+    styles: {
       type: Number,
       default: 1,
     },
