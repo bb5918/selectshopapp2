@@ -12,8 +12,7 @@ const Area = [
   { key: 1, value: "동묘/종로" },
   { key: 2, value: "합정/홍대/신촌" },
   { key: 3, value: "이태원" },
-  { key: 4, value: "강남" },
-  { key: 5, value: "강북" },
+  { key: 4, value: "신사/가로수길" },
 ];
 const Style = [
   { key: 1, value: "키치, 펑크, 고스" },
